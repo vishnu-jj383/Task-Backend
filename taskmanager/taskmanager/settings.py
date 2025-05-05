@@ -100,10 +100,20 @@ WSGI_APPLICATION = 'taskmanager.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'DB1',  # replace with your DB name
+        'USER': 'postgres',     # your RDS master username
+        'PASSWORD': 'vishnu1234',  # your RDS password
+        'HOST': 'database-1.clayageegv5t.ap-south-1.rds.amazonaws.com',  # your RDS endpoint
+        'PORT': '5432',
     }
 }
 
